@@ -15,11 +15,23 @@ namespace UdpTester {
         }
 
         private void MainWindow_Load(object sender, EventArgs e) {
-
+      
         }
 
-        private void d1ChecksumTextBox_KeyPress(object sender, KeyPressEventArgs e) {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        
+
+        private void validateTextBox_KeyPress(object sender, KeyPressEventArgs e) {
+            Utils.validateTextBoxInput(e);
         }
+
+       
+
+        private void generateChecksumButton_Click(object sender, EventArgs e) {
+            checksumLabel.Text = Utils.generateFullMod256Checksum(idChecksumTextBox.Text, d0ChecksumTextBox.Text, d1ChecksumTextBox.Text);
+            
+        }
+
+   
+
     }
 }

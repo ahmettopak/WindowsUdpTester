@@ -27,6 +27,7 @@
             this.d0ChecksumTextBox = new System.Windows.Forms.TextBox();
             this.d1ChecksumTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.saveChecksumButton = new System.Windows.Forms.Button();
             this.generateChecksumButton = new System.Windows.Forms.Button();
             this.checksumLabel = new System.Windows.Forms.Label();
             this.savedChecksumListBox = new System.Windows.Forms.ListBox();
@@ -43,29 +44,38 @@
             // 
             this.idChecksumTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idChecksumTextBox.Location = new System.Drawing.Point(108, 83);
+            this.idChecksumTextBox.MaxLength = 2;
             this.idChecksumTextBox.Name = "idChecksumTextBox";
             this.idChecksumTextBox.Size = new System.Drawing.Size(58, 28);
             this.idChecksumTextBox.TabIndex = 0;
+            this.idChecksumTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idChecksumTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox_KeyPress);
             // 
             // d0ChecksumTextBox
             // 
             this.d0ChecksumTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d0ChecksumTextBox.Location = new System.Drawing.Point(172, 83);
+            this.d0ChecksumTextBox.MaxLength = 2;
             this.d0ChecksumTextBox.Name = "d0ChecksumTextBox";
             this.d0ChecksumTextBox.Size = new System.Drawing.Size(58, 28);
             this.d0ChecksumTextBox.TabIndex = 1;
+            this.d0ChecksumTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.d0ChecksumTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox_KeyPress);
             // 
             // d1ChecksumTextBox
             // 
             this.d1ChecksumTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d1ChecksumTextBox.Location = new System.Drawing.Point(236, 83);
+            this.d1ChecksumTextBox.MaxLength = 2;
             this.d1ChecksumTextBox.Name = "d1ChecksumTextBox";
             this.d1ChecksumTextBox.Size = new System.Drawing.Size(58, 28);
             this.d1ChecksumTextBox.TabIndex = 2;
-            this.d1ChecksumTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.d1ChecksumTextBox_KeyPress);
+            this.d1ChecksumTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.d1ChecksumTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateTextBox_KeyPress);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.saveChecksumButton);
             this.groupBox1.Controls.Add(this.generateChecksumButton);
             this.groupBox1.Controls.Add(this.checksumLabel);
             this.groupBox1.Controls.Add(this.savedChecksumListBox);
@@ -85,14 +95,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Checksum Generator";
             // 
+            // saveChecksumButton
+            // 
+            this.saveChecksumButton.Location = new System.Drawing.Point(259, 159);
+            this.saveChecksumButton.Name = "saveChecksumButton";
+            this.saveChecksumButton.Size = new System.Drawing.Size(85, 36);
+            this.saveChecksumButton.TabIndex = 10;
+            this.saveChecksumButton.Text = "Save";
+            this.saveChecksumButton.UseVisualStyleBackColor = true;
+            // 
             // generateChecksumButton
             // 
-            this.generateChecksumButton.Location = new System.Drawing.Point(260, 117);
+            this.generateChecksumButton.Location = new System.Drawing.Point(259, 117);
             this.generateChecksumButton.Name = "generateChecksumButton";
-            this.generateChecksumButton.Size = new System.Drawing.Size(75, 23);
+            this.generateChecksumButton.Size = new System.Drawing.Size(85, 36);
             this.generateChecksumButton.TabIndex = 9;
             this.generateChecksumButton.Text = "Generate";
             this.generateChecksumButton.UseVisualStyleBackColor = true;
+            this.generateChecksumButton.Click += new System.EventHandler(this.generateChecksumButton_Click);
             // 
             // checksumLabel
             // 
@@ -108,9 +128,9 @@
             // 
             this.savedChecksumListBox.FormattingEnabled = true;
             this.savedChecksumListBox.ItemHeight = 16;
-            this.savedChecksumListBox.Location = new System.Drawing.Point(6, 159);
+            this.savedChecksumListBox.Location = new System.Drawing.Point(6, 207);
             this.savedChecksumListBox.Name = "savedChecksumListBox";
-            this.savedChecksumListBox.Size = new System.Drawing.Size(338, 340);
+            this.savedChecksumListBox.Size = new System.Drawing.Size(338, 292);
             this.savedChecksumListBox.TabIndex = 7;
             this.savedChecksumListBox.Tag = "";
             // 
@@ -201,6 +221,7 @@
         private System.Windows.Forms.Label checksumLabel;
         private System.Windows.Forms.ListBox savedChecksumListBox;
         private System.Windows.Forms.Button generateChecksumButton;
+        private System.Windows.Forms.Button saveChecksumButton;
     }
 }
 
