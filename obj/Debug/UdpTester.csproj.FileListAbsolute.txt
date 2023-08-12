@@ -1,0 +1,11 @@
+C:\Users\trahm\Desktop\Projects\UdpTester\bin\Debug\UdpTester.exe.config
+C:\Users\trahm\Desktop\Projects\UdpTester\bin\Debug\UdpTester.exe
+C:\Users\trahm\Desktop\Projects\UdpTester\bin\Debug\UdpTester.pdb
+C:\Users\trahm\Desktop\Projects\UdpTester\obj\Debug\UdpTester.csproj.AssemblyReference.cache
+C:\Users\trahm\Desktop\Projects\UdpTester\obj\Debug\UdpTester.csproj.SuggestedBindingRedirects.cache
+C:\Users\trahm\Desktop\Projects\UdpTester\obj\Debug\UdpTester.MainWindow.resources
+C:\Users\trahm\Desktop\Projects\UdpTester\obj\Debug\UdpTester.Properties.Resources.resources
+C:\Users\trahm\Desktop\Projects\UdpTester\obj\Debug\UdpTester.csproj.GenerateResource.cache
+C:\Users\trahm\Desktop\Projects\UdpTester\obj\Debug\UdpTester.csproj.CoreCompileInputs.cache
+C:\Users\trahm\Desktop\Projects\UdpTester\obj\Debug\UdpTester.exe
+C:\Users\trahm\Desktop\Projects\UdpTester\obj\Debug\UdpTester.pdb
