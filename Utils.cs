@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace UdpTester {
     internal class Utils {
@@ -14,30 +16,40 @@ namespace UdpTester {
                    (c >= 'a' && c <= 'f');
         }
 
-        public static void validateTextBoxInput(KeyPressEventArgs e) {
+        public static void ValidateHexTextBoxInput(KeyPressEventArgs e) {
             if (!char.IsControl(e.KeyChar) && !IsHexDigit(e.KeyChar)) {
                 e.Handled = true;
             }
 
         }
 
-        public static byte generateMod256Checksum(byte id, byte d0, byte d1) {
-            byte checksum = (byte)((byte)(id + d0 + d1) % 256);
-
-            return checksum;
+        public static void ValidateDecimalTextBoxInput(KeyPressEventArgs e) {
+            if (!char.IsControl(e.KeyChar)) {
+                e.Handled = true;
+            }
         }
 
-        public static byte generateMod256Checksum(string id, string d0, string d1) {
-            byte checksum = (byte)(Convert.ToByte(id) + Convert.ToByte(d0) + Convert.ToByte(d1) % 256);
-            
-            return checksum;
+        
+
+        public static int HexStringToInt(string str) {
+            return int.Parse(str, System.Globalization.NumberStyles.HexNumber);
         }
 
-        public static string generateFullMod256Checksum(string id, string d0, string d1) {
+        public static void ValidateTextBoxValue(TextBox textBox) {
 
-            byte checksum = ((byte)((byte)(Convert.ToByte(id) + Convert.ToByte(d0) + Convert.ToByte(d1)) % 256));
+            string value = textBox.Text;
 
-            return id + d0 + d1+ checksum;
+            // Değer 1 karakter ise başına 0 ekleyerek düzenle
+            if (value.Length == 1) {
+                value = "0" + value;
+            }
+            // Değer 0 karakter ise değeri 00 yaparak düzenle
+            else if (value.Length == 0) {
+                value = "00";
+            }
+
+        
+            textBox.Text = value;
         }
 
 
